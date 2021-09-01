@@ -8,7 +8,7 @@ var capabilities = {
 	"os_version" : "10",
 	"browser" : "chrome",
 	"browser_version" : "latest",
-	"name": "TestNgHamza", // test name
+	"name": "jenkins-TestNgHamza-4", // test name
 	"build" : buildName, // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
 	"browserstack.local" : browserstackLocal,
 	"browserstack.localIdentifier" : browserstackLocalIdentifier,
