@@ -1,22 +1,18 @@
-var username = process.env.BROWSERSTACK_USERNAME;
-var accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
-var buildName = process.env.BROWSERSTACK_BUILD_NAME;
-var browserstackLocal = process.env.BROWSERSTACK_LOCAL;
-var browserstackLocalIdentifier = process.env.BROWSERSTACK_LOCAL_IDENTIFIER;
-var capabilities = {
-	"os" : "Windows",
-	"os_version" : "10",
-	"browser" : "chrome",
-	"browser_version" : "latest",
-	"name": "jenkins-TestNgHamza-4", // test name
-	"build" : buildName, // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
-	"browserstack.local" : browserstackLocal,
-	"browserstack.localIdentifier" : browserstackLocalIdentifier,
-	"browserstack.user" : 'hamide1',
-	"browserstack.key" : 'X9fTDgN1mbQyASshB77x'
-};
-
-var driver = new webdriver.Builder().
-  usingServer("https://hub-cloud.browserstack.com/wd/hub").
-  withCapabilities(capabilities).
-  build();
+  String username = System.getenv("BROWSERSTACK_USERNAME");
+  String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+  String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+  String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
+  String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
+  
+   
+  
+  DesiredCapabilities capabilities = new DesiredCapabilities();
+  capabilities.setCapability("os", "Windows");
+  capabilities.setCapability("os_version", "10");
+  capabilities.setCapability("browser", "chrome");
+  capabilities.setCapability("browser_version", "latest");
+  capabilities.setCapability("name", "BStack-[Java] Build1");
+  capabilities.setCapability("build", Build1); 
+  capabilities.setCapability("browserstack.local", browserstackLocal);
+  capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
+  driver = new RemoteWebDriver(new URL("https://" + 'hamide1' + ":" + 'X9fTDgN1mbQyASshB77x' + "@hub.browserstack.com/wd/hub"), capabilities);
